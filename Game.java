@@ -31,6 +31,7 @@ public class Game
         window.showWindow();
     }
 
+    // make assets 
     private void createEntities()
     {
         Rect rectangle1 = new Rect( 50, 50 );

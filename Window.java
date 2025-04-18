@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Window 
@@ -10,7 +9,7 @@ public class Window
 
     private JFrame frame;
 
-    private ArrayList<Graphics> objectList;
+    private ArrayList<JComponent> entities;
 
     public Window(int width, int height)
     {
@@ -18,7 +17,7 @@ public class Window
         this.height = height;
         visibleState = true;
 
-        objectList = new ArrayList<>(); 
+        this.entities = new ArrayList<>(); 
 
         frame = new JFrame();
         frame.setSize(width, height);
@@ -51,13 +50,22 @@ public class Window
     public void addToWindow(ArrayList<JComponent> entities)
     {
         for ( JComponent entity : entities){
-            frame.add(entity);
+            this.entities.add(entity);
         }
     }
 
     public void showWindow()
     {
-        frame.setLayout(null);
+        // frame.setLayout(null);
+        drawWindow();
         frame.repaint();
     }
+
+    private void drawWindow()
+    {
+        for ( JComponent entity : this.entities){
+            frame.add(entity);
+        }
+    }
+
 }
