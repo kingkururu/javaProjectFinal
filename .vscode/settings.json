@@ -1,0 +1,8 @@
+{
+    "java.format.settings.url": ".vscode/java-formatter.xml",
+    "java.project.sourcePaths": [
+        "src/FirstJava"
+    ],
+    "java.project.referencedLibraries": [],
+    "java.project.outputPath": "target"
+}

@@ -1,5 +1,7 @@
 import javax.swing.*;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Window 
 {
@@ -56,8 +58,9 @@ public class Window
 
     public void showWindow()
     {
-        // frame.setLayout(null);
+        frame.setLayout(null);
         drawWindow();
+        frame.revalidate();
         frame.repaint();
     }
 
@@ -65,6 +68,7 @@ public class Window
     {
         for ( JComponent entity : this.entities){
             frame.add(entity);
+            System.out.println(entity.toString()); 
         }
     }
 
