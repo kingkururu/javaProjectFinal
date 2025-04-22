@@ -27,6 +27,11 @@ public class Rect extends JComponent
         moveState = true;
     }
 
+    public boolean getMoveState()
+    {
+        return moveState;
+    }
+    
     public String toString()
     {
         return "rect1 has widt: " + width + ", and height: " + height;

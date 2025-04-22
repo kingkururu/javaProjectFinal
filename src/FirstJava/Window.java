@@ -1,7 +1,6 @@
 import javax.swing.*;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Window 
 {
@@ -56,7 +55,7 @@ public class Window
         {
             this.entities.add(entity);
         }
-        rectangle1 = (Rect)entities.get(0);
+        rectangle1 = (Rect)entities.get(0); // the first element should be rect
     }
 
     public void showWindow()
@@ -86,7 +85,10 @@ public class Window
 
     public void updateWindow()
     {
-        rectangle1.moveRight();
+        if(rectangle1.getMoveState())
+        {
+            rectangle1.moveRight();
+        }
     }
 
 }
