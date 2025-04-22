@@ -27,12 +27,8 @@ public class Game
 
     public void runGame()
     {
-        drawWindow();
-    }
-
-    private void drawWindow()
-    {
         window.showWindow();
+        window.startAnimation();
     }
 
     // make assets 

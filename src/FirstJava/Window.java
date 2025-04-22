@@ -12,6 +12,7 @@ public class Window
     private JFrame frame;
 
     private ArrayList<JComponent> entities;
+    private Rect rectangle1;
 
     public Window(int width, int height)
     {
@@ -51,9 +52,11 @@ public class Window
 
     public void addToWindow(ArrayList<JComponent> entities)
     {
-        for ( JComponent entity : entities){
+        for(JComponent entity : entities)
+        {
             this.entities.add(entity);
         }
+        rectangle1 = (Rect)entities.get(0);
     }
 
     public void showWindow()
@@ -66,10 +69,24 @@ public class Window
 
     private void drawWindow()
     {
-        for ( JComponent entity : this.entities){
+        for (JComponent entity : this.entities)
+        {
             frame.add(entity);
             System.out.println(entity.toString()); 
         }
+    }
+
+    public void startAnimation()
+    {
+        Timer timer = new Timer(30, e -> {
+            updateWindow();
+        });
+        timer.start();
+    }
+
+    public void updateWindow()
+    {
+        rectangle1.moveRight();
     }
 
 }
