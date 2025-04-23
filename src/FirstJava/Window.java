@@ -87,7 +87,7 @@ public class Window
     {
         if(rectangle1.getMoveState())
         {
-            rectangle1.moveRight();
+            rectangle1.moveDown();
         }
     }
 
