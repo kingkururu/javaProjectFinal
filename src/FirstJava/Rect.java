@@ -1,3 +1,5 @@
+///  File writen by Sunmyoung Yun
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -39,25 +41,25 @@ public class Rect extends JComponent
 
     public void moveRight()
     {
-        position.x += 2;
+        position.x += 5;
         setBounds(position.x, position.y, width, height); // This moves the component
         repaint(); // Make sure it repaints after moving
     }
     public void moveLeft()
     {
-        position.x -= 2;
+        position.x -= 5;
         setBounds(position.x, position.y, width, height); 
         repaint(); 
     }
     public void moveDown()
     {
-        position.y += 2;
+        position.y += 5;
         setBounds(position.x, position.y, width, height); 
         repaint(); 
     }
     public void moveUp()
     {
-        position.y -= 2;
+        position.y -= 5;
         setBounds(position.x, position.y, width, height); 
         repaint(); 
     }
