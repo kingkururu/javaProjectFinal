@@ -1,74 +1,21 @@
 ///  File writen by Sunmyoung Yun
 
-import javax.swing.*;
 import java.awt.*;
 
-public class Rect extends JComponent
+public class Rect extends Shape
 {
-    private int width;
-    private int height;
-    private Point position;
-    private Color color; 
-    private boolean moveState;
-
     public Rect(int width, int height)
     {
-        this.width = width;
-        this.height = height;
-        setSize(width, height);
-        moveState = true;
+        super(width, height);
     }
 
-    public Rect(Point position, int width, int height, Color color)
+    public Rect(int width, int height, Point position, Color color, boolean moveState, int speed)
     {
-        this.position = position;
-        this.color = color;
-        this.width = width;
-        this.height = height;
-        setBounds(position.x, position.y, width, height);
-        moveState = true;
+        super(width, height, position, color, moveState, speed);
     }
 
-    public boolean getMoveState()
-    {
-        return moveState;
-    }
-    
     public String toString()
     {
-        return "rect1 has widt: " + width + ", and height: " + height;
-    }
-
-    public void moveRight()
-    {
-        position.x += 5;
-        setBounds(position.x, position.y, width, height); // This moves the component
-        repaint(); // Make sure it repaints after moving
-    }
-    public void moveLeft()
-    {
-        position.x -= 5;
-        setBounds(position.x, position.y, width, height); 
-        repaint(); 
-    }
-    public void moveDown()
-    {
-        position.y += 5;
-        setBounds(position.x, position.y, width, height); 
-        repaint(); 
-    }
-    public void moveUp()
-    {
-        position.y -= 5;
-        setBounds(position.x, position.y, width, height); 
-        repaint(); 
-    }
-
-    @Override
-    protected void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
-        g.setColor(color);        
-        g.fillRect( 0, 0, width, height ); // internal coordinate
+        return "rect1 has widt: " + super.getWidth() + ", and height: " + super.getHeight();
     }
 }

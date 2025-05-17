@@ -38,10 +38,12 @@ public class Game
     {
         this.entities = new ArrayList<>();
 
-        Rect rectangle1 = new Rect( new Point(70, 60), 50, 50 , Color.RED);
+        Rect rectangle1 = new Rect( 50, 20, new Point(70, 60), Color.RED, true, 3);
+        Ball ball1 = new Ball( 10, 10, new Point(70, 60), Color.BLUE, true, 2);
         TextEntity text1 = new TextEntity( new Point (200, 300), "Arial", 80, Color.YELLOW);
 
         entities.add(rectangle1);
+        entities.add(ball1);
         entities.add(text1);
     }
 
