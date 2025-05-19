@@ -10,7 +10,6 @@ public class Shape extends JComponent
     private Point position;
     private Color color; 
     private boolean moveState;
-
     private int speed; // num of pixels moving per frame
 
     public Shape(int width, int height, Point position, Color color, boolean moveState, int speed)
@@ -21,6 +20,7 @@ public class Shape extends JComponent
         this.color = color;
         this.moveState = moveState;
         this.speed = speed;
+        setBounds(position.x, position.y, width, height); 
     }
 
     public Shape(int width, int height)
@@ -34,6 +34,15 @@ public class Shape extends JComponent
         setBounds(position.x, position.y, width, height); // Important
     }
 
+    public int getShapeWidth()
+    {
+        return this.width;
+    }
+
+    public int getShapeHeight()
+    {
+        return this.height;
+    }
     public boolean getMoveState()
     {
         return moveState;

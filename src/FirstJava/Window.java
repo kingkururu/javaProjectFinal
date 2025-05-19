@@ -26,8 +26,6 @@ public class Window
         frame = new JFrame();
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        this.frame.setVisible(visibleState);
     }
 
     public void setVisibleState(boolean visibleState)
@@ -66,6 +64,7 @@ public class Window
         drawWindow();
         frame.revalidate();
         frame.repaint();
+        frame.setVisible(visibleState);
     }
 
     private void drawWindow()

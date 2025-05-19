@@ -1,11 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 
+
 public class Ball extends Shape
 {
     public Ball(int width, int height)
     {
         super(width, height);
+        setPreferredSize(new Dimension(width, height));
+        setOpaque(false);
     }
 
     public Ball(int width, int height, Point position, Color color, boolean moveState, int speed)

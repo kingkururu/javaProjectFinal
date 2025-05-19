@@ -14,8 +14,9 @@ public class Rect extends Shape
         super(width, height, position, color, moveState, speed);
     }
 
+    @Override
     public String toString()
     {
-        return "rect1 has widt: " + super.getWidth() + ", and height: " + super.getHeight();
+        return "rect1 has widt: " + getShapeWidth() + ", and height: " + getShapeHeight();
     }
 }
