@@ -3,41 +3,39 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class TextEntity extends JComponent
-{
+public class TextEntity extends JComponent {
     private String message;
     private int size;
     private Color color;
-    private Point startingPoint;
     private Font text;
 
-    public TextEntity()
-    {
-        message = "Text message not initialized";
-        size = 50;
-        color = Color.BLACK;
-        text = new Font(message, Font.BOLD, size);
-        this.setSize(message.length() * size, size * 2);
+    public TextEntity() {
+        this(new Point(0, 0), "Text message not initialized", 50, Color.BLACK);
     }
-    
-    public TextEntity(Point startingPoint, String message, int size, Color color)
-    {
-        this.startingPoint = startingPoint;
+
+    public TextEntity(Point startingPoint, String message, int size, Color color) {
         this.message = message;
         this.size = size;
         this.color = color;
-        text = new Font(message, Font.BOLD, size);
-        this.setSize(message.length() * size, size * 2);
-    }
-    
-    @Override
-    protected void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
+        this.text = new Font("Arial", Font.BOLD, size);
+        this.setFont(text);
 
+        // Use FontMetrics to size the component properly
+        FontMetrics metrics = getFontMetrics(text);
+        int width = metrics.stringWidth(message);
+        int height = metrics.getHeight();
+        this.setBounds(startingPoint.x, startingPoint.y, width, height);
+
+        setOpaque(false); // Optional: make background transparent
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
         g.setFont(text);
         g.setColor(color);
 
-        g.drawString(message, startingPoint.x, startingPoint.y);
+        // Draw string inside the component
+        g.drawString(message, 0, g.getFontMetrics().getAscent());
     }
 }
