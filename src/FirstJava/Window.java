@@ -14,6 +14,7 @@ public class Window
 
     private ArrayList<JComponent> entities;
     private Rect rectangle1;
+    private Ball ball1;
 
     public Window(int width, int height)
     {
@@ -56,6 +57,7 @@ public class Window
             this.entities.add(entity);
         }
         rectangle1 = (Rect)entities.get(0); // the first element should be rect
+        ball1 = (Ball)entities.get(1);
     }
 
     public void showWindow()
@@ -89,6 +91,7 @@ public class Window
         if(rectangle1.getMoveState())
         {
             rectangle1.moveDown();
+            ball1.moveLeft();
 
             if(rectangle1.getBounds().x < 0)
             {
