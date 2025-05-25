@@ -52,7 +52,14 @@ public class Shape extends JComponent
     {
         return color;
     }
-
+    public int getSpeed()
+    {
+        return speed;
+    }
+    public void setSpeed(int speed)
+    {
+        this.speed = speed;
+    }
     public void moveRight()
     {
         position.x += speed;

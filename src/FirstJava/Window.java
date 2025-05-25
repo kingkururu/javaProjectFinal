@@ -6,26 +6,25 @@ import java.util.ArrayList;
 
 public class Window 
 {
-    private int width; 
-    private int height;
     private boolean visibleState;
 
     private JFrame frame;
 
     private ArrayList<JComponent> entities;
-    private Rect rectangle1;
-    private Ball ball1;
+    private Dynamic paddle;
+    private Static floor;
+    private Static rightWall;
+    private Dynamic ball1;
 
-    public Window(int width, int height)
+    public Window()
     {
-        this.width = width;
-        this.height = height;
+
         visibleState = true;
 
         this.entities = new ArrayList<>(); 
 
         frame = new JFrame();
-        frame.setSize(width, height);
+        frame.setSize(Game.WINDOW_WIDTH, Game.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -40,24 +39,16 @@ public class Window
         return visibleState;
     }
 
-    public int getWidth()
-    {
-        return width;
-    }
-
-    public int getHeight()
-    {
-        return height;
-    }
-
     public void addToWindow(ArrayList<JComponent> entities)
     {
         for(JComponent entity : entities)
         {
             this.entities.add(entity);
         }
-        rectangle1 = (Rect)entities.get(0); // the first element should be rect
-        ball1 = (Ball)entities.get(1);
+        paddle = (Dynamic)entities.get(0); // the first element should be rect
+        floor = (Static)entities.get(1);
+        rightWall = (Static)entities.get(2);
+        ball1 = (Dynamic)entities.get(3);
     }
 
     public void showWindow()
@@ -88,27 +79,14 @@ public class Window
 
     public void updateWindow()
     {
-        if(rectangle1.getMoveState())
-        {
-            rectangle1.moveDown();
-            ball1.moveLeft();
-
-            if(rectangle1.getBounds().x < 0)
-            {
-                rectangle1.moveRight();
-            } 
-            else if(rectangle1.getBounds().x + rectangle1.getBounds().width > this.width)
-            {
-                rectangle1.moveLeft();
-            }
-            else if(rectangle1.getBounds().y < 0)
-            {
-                rectangle1.moveDown();
-            }
-            else if(rectangle1.getBounds().y + rectangle1.getBounds().height > this.height)
-            {
-                rectangle1.moveUp();
-            }
+        ball1.moveDirection();
+        boolean dPressed = true;
+        boolean aPressed = false;
+        if(dPressed && paddle.getBounds().x + paddle.getBounds().width < Game.WINDOW_WIDTH){
+            paddle.moveRight();
+        }
+        if(aPressed && paddle.getBounds().x < 0){
+            paddle.moveLeft();
         }
     }
 
