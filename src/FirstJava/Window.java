@@ -1,15 +1,14 @@
 ///  File writen by Sunmyoung Yun
 
+import java.util.ArrayList;
 import javax.swing.*;
 
-import java.util.ArrayList;
-
-public class Window 
+public class Window
 {
     private boolean visibleState;
 
     private JFrame frame;
-
+    private Keyboard key;
     private ArrayList<JComponent> entities;
     private Dynamic paddle;
     private Static floor;
@@ -20,12 +19,14 @@ public class Window
     {
 
         visibleState = true;
-
-        this.entities = new ArrayList<>(); 
-
+        this.entities = new ArrayList<>();
         frame = new JFrame();
         frame.setSize(Game.WINDOW_WIDTH, Game.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        key = new Keyboard();//made by chat GPT
+        frame.addKeyListener(key);//made by chat GPT
+        frame.setFocusable(true);//made by chat GPT
+        frame.requestFocusInWindow();//made by chat GPT
     }
 
     public void setVisibleState(boolean visibleState)
@@ -80,12 +81,13 @@ public class Window
     public void updateWindow()
     {
         ball1.moveDirection();
-        boolean dPressed = true;
-        boolean aPressed = false;
+        
+        boolean dPressed = key.isRightClicked();
+        boolean aPressed = key.isLeftClicked();
         if(dPressed && paddle.getBounds().x + paddle.getBounds().width < Game.WINDOW_WIDTH){
             paddle.moveRight();
         }
-        if(aPressed && paddle.getBounds().x < 0){
+        if(aPressed && paddle.getBounds().x > 0){
             paddle.moveLeft();
         }
     }

@@ -1,3 +1,39 @@
-public final class Keyboard {
-     
+import java.awt.event.*;
+import javax.swing.JFrame;
+
+public class Keyboard extends JFrame implements ActionListener, KeyListener {
+    private boolean leftClick = false;
+    private boolean rightClick = false;
+    public boolean isLeftClicked(){
+        return leftClick;
+    }
+    public boolean isRightClicked(){
+        return rightClick;
+    }
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
+            leftClick = true;
+            //System.out.println("Left Pressed");
+        }
+
+        if (key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
+            rightClick = true;
+            //System.out.println("Right Pressed");
+        }
+    }//written by GPT(best friend)
+    public void keyReleased(KeyEvent e) {
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
+            leftClick = false;
+            //System.out.println("Left released");
+        }
+
+        if (key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
+            rightClick = false;
+            //System.out.println("Right released");
+        }
+    }
 }

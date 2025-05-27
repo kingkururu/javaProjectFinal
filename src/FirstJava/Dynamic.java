@@ -1,6 +1,4 @@
-import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 
 public class Dynamic extends Shape {
@@ -58,6 +56,8 @@ public class Dynamic extends Shape {
         else if(y < 0){
             System.out.println("down");
             direction = (360 - direction) % 360;
+            //condition for touch ground
+            //put game over here
         }
         else if(y+getHeight() > Game.WINDOW_HEIGHT){
             System.out.println("up");

@@ -1,7 +1,7 @@
 ///  File writen by Sunmyoung Yun
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class TextEntity extends JComponent {
     private String message;
