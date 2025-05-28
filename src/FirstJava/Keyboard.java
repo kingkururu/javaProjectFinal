@@ -1,7 +1,7 @@
 import java.awt.event.*;
 import javax.swing.JFrame;
 
-public class Keyboard extends JFrame implements ActionListener, KeyListener {
+public class Keyboard extends JFrame implements KeyListener {
     private boolean leftClick = false;
     private boolean rightClick = false;
     private boolean spaceClick = false;
@@ -47,5 +47,8 @@ public class Keyboard extends JFrame implements ActionListener, KeyListener {
         if (key == KeyEvent.VK_SPACE) {
             spaceClick = false;
         }
+    }
+    public void keyTyped(KeyEvent e) {
+        //written by GPT
     }
 }
