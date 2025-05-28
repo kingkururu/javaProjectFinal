@@ -17,6 +17,6 @@ public class Static extends Shape
     @Override
     public String toString()
     {
-        return "rect1 has width: " + getShapeWidth() + ", and height: " + getShapeHeight();
+        return "rect1 has width: " + getShapeWidth() + ", and height: " + getShapeHeight(); // default is rect
     }
 }

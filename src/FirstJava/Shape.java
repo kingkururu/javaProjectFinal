@@ -27,11 +27,11 @@ public class Shape extends JComponent
     {
         this.width = width;
         this.height = height;
-        this.position = new Point(0, 0);  // Set default position
-        this.color = Color.BLUE;         // Default color
+        this.position = new Point(0, 0); 
+        this.color = Color.BLUE;     
         this.moveState = true;
         this.speed = 5;
-        setBounds(position.x, position.y, width, height); // Important
+        setBounds(position.x, position.y, width, height); 
     }
 
     public int getShapeWidth()

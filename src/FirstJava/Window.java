@@ -1,5 +1,6 @@
 ///  File writen by Sunmyoung Yun
 
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -17,7 +18,6 @@ public class Window
 
     public Window()
     {
-
         visibleState = true;
         this.entities = new ArrayList<>();
         frame = new JFrame();
@@ -46,7 +46,7 @@ public class Window
         {
             this.entities.add(entity);
         }
-        paddle = (Dynamic)entities.get(0); // the first element should be rect
+        paddle = (Dynamic)entities.get(0); 
         floor = (Static)entities.get(1);
         rightWall = (Static)entities.get(2);
         ball1 = (Dynamic)entities.get(3);
