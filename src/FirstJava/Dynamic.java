@@ -64,17 +64,4 @@ public class Dynamic extends Shape {
             direction = (360 - direction) % 360;
         }
     }
-
-
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2d.setColor(getColor());
-        int size = Math.min(getWidth(), getHeight());
-        g2d.fillOval(0, 0, size, size);
-    }
 }
