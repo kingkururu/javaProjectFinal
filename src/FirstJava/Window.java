@@ -1,6 +1,5 @@
 ///  File writen by Sunmyoung Yun
-
-import java.awt.Color;
+// Also written by Jaeho
 import java.util.ArrayList;
 import javax.swing.*;
 
