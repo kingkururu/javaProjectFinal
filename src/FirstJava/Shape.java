@@ -85,6 +85,7 @@ public class Shape extends JComponent
         repaint(); 
     }
 
+    // writen by AI
     @Override
     protected void paintComponent(Graphics g)
     {

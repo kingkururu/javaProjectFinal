@@ -29,6 +29,7 @@ public class TextEntity extends JComponent {
         setOpaque(false); // Optional: make background transparent
     }
 
+    // writen by AI
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

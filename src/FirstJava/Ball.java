@@ -7,14 +7,12 @@ public class Ball extends Dynamic {
         super(width, height, position, color, moveState, speed, direction, collisions);
     }
 
+    // writen by AI
     @Override
-    protected void paintComponent(Graphics g) {
-
+    protected void paintComponent(Graphics g) 
+    {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(getColor());
-
         g2d.fillOval(0, 0, getWidth(), getHeight());
     }
-
-
 }
