@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.awt.*;
 
 public class Ball extends Dynamic {
-    public Ball(int width, int height, Point position, Color color, boolean moveState, int speed, int direction, ArrayList<Shape> collisions)
+    public Ball(int width, int height, Point position, Color color, boolean moveState, int speed, int direction, Static paddle)
     {
-        super(width, height, position, color, moveState, speed, direction, collisions);
+        super(width, height, position, color, moveState, speed, direction, paddle);
     }
 
     // writen by AI

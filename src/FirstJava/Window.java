@@ -10,7 +10,7 @@ public class Window
     private JFrame frame;
     private Keyboard key;
     private ArrayList<JComponent> entities;
-    private Dynamic paddle;
+    private Static paddle;
     private Static floor;
     private Static rightWall;
     private Dynamic ball1;
@@ -45,7 +45,7 @@ public class Window
         {
             this.entities.add(entity);
         }
-        paddle = (Dynamic)entities.get(0); 
+        paddle = (Static)entities.get(0); 
         floor = (Static)entities.get(1);
         rightWall = (Static)entities.get(2);
         ball1 = (Dynamic)entities.get(3);

@@ -37,8 +37,8 @@ public class Game
         this.entities = new ArrayList<>();
         this.collisions = new ArrayList<>();
         System.out.println("Creating entities...");
-        Dynamic paddle = new Dynamic( 50, 20, new Point(70, WINDOW_HEIGHT - 100), Color.RED, true, 10, 0, collisions);
-        Dynamic ball1 = new Ball( 20, 20, new Point(200, 60), Color.BLUE, true, 7, 45, collisions);
+        Static paddle = new Static( 70, 10, new Point(70, WINDOW_HEIGHT - 100), Color.RED, true, 10);
+        Dynamic ball1 = new Ball( 20, 20, new Point(200, 60), Color.BLUE, true, 7, 45, paddle);
         TextEntity text1 = new TextEntity( new Point (70, 50), "Pong Game!!!", 50, Color.BLACK);
         Static floor = new Static( WINDOW_WIDTH, 100, new Point(0, WINDOW_HEIGHT), Color.BLACK, false, 0);
         Static rightWall = new Static( 100, WINDOW_HEIGHT, new Point(WINDOW_WIDTH,0), Color.BLACK, false, 0);
