@@ -1,4 +1,4 @@
-///  File writen by Sunmyoung Yun
+///  File writen by Sunmyoung and Chaeyun
 
 import java.awt.Color;
 import java.awt.Point;

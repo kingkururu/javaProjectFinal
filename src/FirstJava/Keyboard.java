@@ -1,6 +1,8 @@
+///  File writen by Jaeho [ Look at this file please for Jaeho's grade ]
+
 import java.awt.event.*;
 import javax.swing.JFrame;
-// Written by Jaeho
+
 public class Keyboard extends JFrame implements KeyListener {
     private boolean leftClick = false;
     private boolean rightClick = false;

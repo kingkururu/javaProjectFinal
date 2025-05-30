@@ -1,5 +1,5 @@
-///  File writen by Sunmyoung Yun
-// Also written by Jaeho
+///  File writen by Sunmyoung, Jaeho, Chaeyun 
+
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -71,6 +71,7 @@ public class Window
 
     public void startAnimation()
     {
+        // Written by AI
         Timer timer = new Timer(30, e -> {
             updateWindow();
         });

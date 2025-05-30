@@ -1,4 +1,4 @@
-/// File written by Sunmyoung Yun
+/// File written by Sunmyoung  [ Look at this file please for Sunmyoung's grade ]
 
 import javax.swing.*;
 import java.awt.*;

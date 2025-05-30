@@ -1,4 +1,4 @@
-///  File writen by Sunmyoung Yun
+///  File writen by Chaeyun
 
 import java.awt.*;
 

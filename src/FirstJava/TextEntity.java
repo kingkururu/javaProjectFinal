@@ -1,4 +1,4 @@
-///  File writen by Sunmyoung Yun
+///  File writen by Sunmyoung
 
 import java.awt.*;
 import javax.swing.*;
@@ -13,6 +13,7 @@ public class TextEntity extends JComponent {
         this(new Point(0, 0), "Text message not initialized", 50, Color.BLACK);
     }
 
+    // written by AI
     public TextEntity(Point startingPoint, String message, int size, Color color) {
         this.message = message;
         this.size = size;
