@@ -1,7 +1,7 @@
 /// File written by Sunmyoung  [ Look at this file please for Sunmyoung's grade ]
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class Shape extends JComponent
 {
@@ -47,7 +47,10 @@ public class Shape extends JComponent
     {
         return moveState;
     }
-
+    public void setMoveState(boolean state)
+    {
+        moveState = state;
+    }
     public Color getColor()
     {
         return color;

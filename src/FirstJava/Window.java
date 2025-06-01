@@ -81,7 +81,6 @@ public class Window
     public void updateWindow()
     {
         ball1.moveDirection();
-        
         boolean dPressed = key.isRightClicked();
         boolean aPressed = key.isLeftClicked();
         if(dPressed && paddle.getBounds().x + paddle.getBounds().width < Game.WINDOW_WIDTH){

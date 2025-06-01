@@ -8,7 +8,8 @@ public class TextEntity extends JComponent {
     private int size;
     private Color color;
     private Font text;
-
+    private int width;
+    private int height;
     public TextEntity() {
         this(new Point(0, 0), "Text message not initialized", 50, Color.BLACK);
     }
@@ -23,11 +24,15 @@ public class TextEntity extends JComponent {
 
         // Use FontMetrics to size the component properly
         FontMetrics metrics = getFontMetrics(text);
-        int width = metrics.stringWidth(message);
-        int height = metrics.getHeight();
+        width = metrics.stringWidth(message);
+        height = metrics.getHeight();
         this.setBounds(startingPoint.x, startingPoint.y, width, height);
 
         setOpaque(false); // Optional: make background transparent
+    }
+
+    public void setPosition(Point newPosition){
+        this.setBounds(newPosition.x, newPosition.y, width, height);
     }
 
     // writen by AI
