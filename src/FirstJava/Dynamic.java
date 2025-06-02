@@ -26,9 +26,11 @@ public class Dynamic extends Shape {
 
     public void moveDirection() {
         if (getMoveState()) {
-            //Chat GPT: I have direction in degrees and speed variable, both in int type. I want to use setLocation, getSpeed, and getX, getY methods to move the object in the direction of the angle with the speed.
-            int dx = (int) (getSpeed() * Math.cos(Math.toRadians(direction)));
-            int dy = (int) (getSpeed() * Math.sin(Math.toRadians(direction)));
+            //Chat GPT: I have direction variable in degree in int type. I want to use the setLocation, getSpeed, and getX, getY methods to move the object in the direction of the angle with the speed. Everything is in int type except for angle. Write in 4 lines.
+            //https://chatgpt.com/c/683d0a9c-3e30-800b-8cb9-5e7d3d4cec8c
+            double rad = Math.toRadians(direction);
+            int dx = (int)(Math.cos(rad) * getSpeed());
+            int dy = (int)(Math.sin(rad) * getSpeed());
             setLocation(getX() + dx, getY() + dy);
         }
         collisionDetection();
