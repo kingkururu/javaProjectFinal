@@ -1,5 +1,5 @@
 ///  File writen by Chaeyun
-
+/// 
 import java.awt.*;
 
 public class Dynamic extends Shape {
@@ -26,6 +26,7 @@ public class Dynamic extends Shape {
 
     public void moveDirection() {
         if (getMoveState()) {
+            //Chat GPT: I have direction in degrees and speed variable, both in int type. I want to use setLocation, getSpeed, and getX, getY methods to move the object in the direction of the angle with the speed.
             int dx = (int) (getSpeed() * Math.cos(Math.toRadians(direction)));
             int dy = (int) (getSpeed() * Math.sin(Math.toRadians(direction)));
             setLocation(getX() + dx, getY() + dy);
